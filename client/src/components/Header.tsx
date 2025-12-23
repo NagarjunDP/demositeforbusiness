@@ -1217,7 +1217,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import Image from 'next/image';
 
 const BUTTERFLY_LOGO = "/images.png";
 
@@ -1263,20 +1262,21 @@ export default function Header() {
       >
         <div className="flex items-center justify-between h-24 px-6 lg:px-12">
 
-          {/* Butterfly Logo */}
+          {/* Optimized Butterfly Logo */}
           <a href="/" className="flex items-center">
             <motion.div
               whileHover={{ scale: 1.05, rotate: 2 }}
-              transition={{ type: "spring", stiffness: 200 }}
-              className="relative h-16 w-16 md:h-20 md:w-20"
+              transition={{ type: 'spring', stiffness: 200 }}
+              className="h-16 w-16 md:h-20 md:w-20"
             >
-              <Image
+              <img
                 src={BUTTERFLY_LOGO}
                 alt="Butterfly Logo"
-                fill
-                priority
-                sizes="(max-width: 768px) 64px, 80px"
-                className="object-contain drop-shadow-lg"
+                width={80}
+                height={80}
+                loading="eager"
+                decoding="async"
+                className="h-full w-full object-contain drop-shadow-lg"
               />
             </motion.div>
           </a>
@@ -1361,3 +1361,4 @@ export default function Header() {
     </>
   );
 }
+
