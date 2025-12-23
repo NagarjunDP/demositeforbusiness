@@ -299,7 +299,7 @@ Sent from Shri Events Contact Form
             Call us directly or fill out the form above. We're here to help!
           </motion.p>
           <motion.a
-            href="tel:+919739120735"
+            href=""
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-lg hover:shadow-2xl transition-all duration-300 shadow-lg text-lg"
