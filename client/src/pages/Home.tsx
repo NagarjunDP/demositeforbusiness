@@ -3555,7 +3555,7 @@ function FloatingCallButton() {
 
       {/* Instagram Button */}
       <motion.a
-        href="https://www.instagram.com/shri_events_decoration/"
+        href=""
         target="_blank"
         rel="noopener noreferrer"
         initial={{ scale: 0 }}
