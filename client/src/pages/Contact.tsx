@@ -15,7 +15,7 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const WHATSAPP_NUMBER = "+919739220735";
+  const WHATSAPP_NUMBER = "";
   const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID"; // CHANGE THIS!
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -94,8 +94,8 @@ Sent from Shri Events Contact Form
   };
 
   const contactInfo = [
-    { icon: Phone, title: 'Phone', value: '+91 97392 20735', link: 'tel:+91 97392 20735' },
-    { icon: Mail, title: 'Email', value: 'shrinivas199721@gmail.com', link: 'mailto:shrinivas199721@gmail.com' },
+    { icon: Phone, title: 'Phone', value: '+91 97392 20735', link: '' },
+    { icon: Mail, title: 'Email', value: 'gmail@gmail.com', link: '' },
     { icon: MapPin, title: 'Location', value: 'Bangalore, India', link: '#' },
   ];
 
@@ -305,7 +305,7 @@ Sent from Shri Events Contact Form
             className="inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-lg hover:shadow-2xl transition-all duration-300 shadow-lg text-lg"
           >
             <Phone size={24} />
-            Call Now: +91 97392 20735
+            Call Now: Phone Number
           </motion.a>
         </div>
       </section>
