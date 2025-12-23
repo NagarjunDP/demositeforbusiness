@@ -75,6 +75,52 @@
  */
 
 /// <reference types="@types/google.maps" />
+// import { useEffect, useRef } from "react";
+// import L from "leaflet";
+// import { motion } from "framer-motion";
+
+// export function MapView({ className }) {
+//   const mapContainer = useRef(null);
+
+//   useEffect(() => {
+//     if (!mapContainer.current) return;
+
+//     // Initialize map
+//     const map = L.map(mapContainer.current).setView(
+//       [13.10209, 77.58932], // Yelahanka default
+//       15
+//     );
+
+//     // Load and display tile layer (FREE OpenStreetMap)
+//     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+//       maxZoom: 19,
+//       attribution: "© OpenStreetMap",
+//     }).addTo(map);
+
+//     // Marker
+//     L.marker([13.10209, 77.58932])
+//       .addTo(map)
+//       .bindPopup("Shri Events - Yelahanka")
+//       .openPopup();
+
+//     return () => map.remove();
+//   }, []);
+
+//   return (
+//     <motion.div
+//       initial={{ opacity: 0, y: 20 }}
+//       whileInView={{ opacity: 1, y: 0 }}
+//       viewport={{ once: true }}
+//       transition={{ duration: 0.6 }}
+//       className={`rounded-2xl overflow-hidden shadow-xl border border-white/10 ${className}`}
+//     >
+//       <div
+//         ref={mapContainer}
+//         className="w-full h-[240px] md:h-[300px]"
+//       />
+//     </motion.div>
+//   );
+// }
 import { useEffect, useRef } from "react";
 import L from "leaflet";
 import { motion } from "framer-motion";
@@ -85,22 +131,19 @@ export function MapView({ className }) {
   useEffect(() => {
     if (!mapContainer.current) return;
 
-    // Initialize map
-    const map = L.map(mapContainer.current).setView(
-      [13.10209, 77.58932], // Yelahanka default
-      15
-    );
+    // DEMO LOCATION (center of India – neutral)
+    const demoLocation = [22.5937, 78.9629];
 
-    // Load and display tile layer (FREE OpenStreetMap)
+    const map = L.map(mapContainer.current).setView(demoLocation, 4);
+
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
+      maxZoom: 18,
       attribution: "© OpenStreetMap",
     }).addTo(map);
 
-    // Marker
-    L.marker([13.10209, 77.58932])
+    L.marker(demoLocation)
       .addTo(map)
-      .bindPopup("Shri Events - Yelahanka")
+      .bindPopup("Your Business Location (Demo)")
       .openPopup();
 
     return () => map.remove();
@@ -112,12 +155,9 @@ export function MapView({ className }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className={`rounded-2xl overflow-hidden shadow-xl border border-white/10 ${className}`}
+      className={`rounded-xl overflow-hidden ${className}`}
     >
-      <div
-        ref={mapContainer}
-        className="w-full h-[240px] md:h-[300px]"
-      />
+      <div ref={mapContainer} className="w-full h-full" />
     </motion.div>
   );
 }
