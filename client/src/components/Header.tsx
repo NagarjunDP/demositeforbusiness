@@ -1072,8 +1072,8 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
-const BUTTERFLY_LOGO = "/logo-removebg-preview.png";
-const MAIN_LOGO = "/Gemini_Generated_Image_casu65casu65casu-removebg-preview.png";
+const BUTTERFLY_LOGO = "/images.png";
+const MAIN_LOGO = "/images.png";
 
 const navItems = [
   { label: 'Home', href: '/' },
