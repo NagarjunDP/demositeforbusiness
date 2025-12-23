@@ -2668,7 +2668,7 @@ export default function Services() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600 font-medium">Call Now</p>
-                    <p className="text-lg font-bold text-gray-900">+91 97392 20735</p>
+                    <p className="text-lg font-bold text-gray-900">Business Number</p>
                   </div>
                 </motion.a>
 
@@ -2684,7 +2684,7 @@ export default function Services() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600 font-medium">Email Us</p>
-                    <p className="text-lg font-bold text-gray-900">shrinivas199721@gmail.com</p>
+                    <p className="text-lg font-bold text-gray-900">business@gmail.com</p>
                   </div>
                 </motion.a>
               </div>
@@ -2700,7 +2700,7 @@ export default function Services() {
                   Book Now
                 </motion.button>
                 <motion.button
-                  href="tel:+919876543210"
+                  href=""
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-bold rounded-xl hover:bg-gray-50 transition-all duration-300 text-lg"
