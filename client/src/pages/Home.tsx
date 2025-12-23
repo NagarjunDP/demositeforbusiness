@@ -1881,7 +1881,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ButterflyAnimation from "../components/ButterflyAnimation"; // Ensure this exports default
 interface Highlight {
-  // whatever you need
 }
 
 interface Service {
@@ -1947,8 +1946,8 @@ const iconMap: Record<string, any> = {
   'Sparkles': Sparkles,
 };
 // === CONFIG ===
-const PHONE_NUMBER = '+91 97392 20735';
-const BUSINESS_NAME = "Shri Events";
+const PHONE_NUMBER = 'Phone Number';
+const BUSINESS_NAME = "Demo Site";
 
 // Example service data -- keep for animated service sections
 const SERVICES = [
@@ -2338,7 +2337,7 @@ function Hero() {
         "/oie_9113025Zn4zvO9R.jpg",
         "/WhatsApp Image 2025-12-08 at 23.02.30.jpeg",
         "/WhatsApp Image 2025-12-08 at 23.08.27 (1).jpeg",
-        "/event18.webp",
+    "/event18.webp",
     "/oie_911234R8vLZS8d.jpg",
     "/oie_9113458FxOUTGzI.jpg",
     "/oie_9113542DF0IVhHx.jpg",
@@ -2356,7 +2355,7 @@ function Hero() {
   }, []);
 
   // Circular Text Logic for the badge
-  const circularText = "Shri.Events.Decor • ";
+  const circularText = "Demo.Events.Decor • ";
   const characters = circularText.split("");
   const radius = 45; // Adjusts how far out the text sits
 
@@ -2422,7 +2421,7 @@ function Hero() {
             // Highly Responsive Text Sizes
             className="text-6xl xs:text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] font-serif font-semibold leading-[0.9] tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-100 to-fuchsia-400 drop-shadow-xl"
           >
-            Shri Events
+            Demo Site
           </motion.h1>
         </div>
 
@@ -2435,7 +2434,7 @@ function Hero() {
         >
           <div className="h-[1px] w-12 md:w-24 bg-gradient-to-r from-transparent to-pink-400" />
           <span className="text-pink-200 text-[10px] md:text-sm font-medium uppercase tracking-[0.3em] text-nowrap">
-            Decoration And Management
+            For Small Business
           </span>
           <div className="h-[1px] w-12 md:w-24 bg-gradient-to-l from-transparent to-pink-400" />
         </motion.div>
@@ -2447,7 +2446,7 @@ function Hero() {
           transition={{ delay: 0.5, duration: 1 }}
           className="text-xl sm:text-3xl md:text-5xl font-light text-white drop-shadow-lg px-4"
         >
-          Celebrate Lovely Moment's With Us
+          Your Motto
         </motion.h2>
 
         {/* BOTTOM EMOTIONAL TAGLINE */}
@@ -2457,7 +2456,7 @@ function Hero() {
           transition={{ delay: 0.8, duration: 1 }}
           className="mt-3 md:mt-6 text-base md:text-2xl text-pink-100/90 font-serif italic"
         >
-          " We make your smile "
+          " Motto "
         </motion.p>
 
         {/* ACTION BUTTONS */}
@@ -2474,7 +2473,7 @@ function Hero() {
             Explore Services
           </a>
           <a 
-            href="tel:+919739220735"
+            href=""
             className="w-full sm:w-auto px-8 py-3 md:py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-medium text-base md:text-lg rounded-full active:bg-white/20 transition-colors"
           >
             Call Now
@@ -2523,7 +2522,7 @@ function Hero() {
           {/* CENTRAL CIRCULAR VIDEO */}
           <div className="relative w-full h-full rounded-full overflow-hidden border-[1px] border-purple-400/30 z-10 bg-black/40 backdrop-blur-sm p-1 md:p-2 scale-75">
             <video
-              src="/grok-video-7446ecf8-8560-4b06-8923-1779d51970da.mp4"
+              src=""
               autoPlay
               loop
               muted
