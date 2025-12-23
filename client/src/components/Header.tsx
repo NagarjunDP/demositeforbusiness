@@ -1073,7 +1073,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const BUTTERFLY_LOGO = "/images.png";
-const MAIN_LOGO = "/images.png";
+const MAIN_LOGO = "";
 
 const navItems = [
   { label: 'Home', href: '/' },
