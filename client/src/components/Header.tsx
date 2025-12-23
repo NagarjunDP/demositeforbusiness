@@ -1067,13 +1067,159 @@
 //     </>
 //   );
 // }
+// 'use client';
+// import { useState, useEffect } from 'react';
+// import { motion, AnimatePresence } from 'framer-motion';
+// import { Menu, X } from 'lucide-react';
+
+// const BUTTERFLY_LOGO = "/images.png";
+// const MAIN_LOGO = "";
+
+// const navItems = [
+//   { label: 'Home', href: '/' },
+//   { label: 'Services', href: '/services' },
+//   { label: 'Gallery', href: '/gallery' },
+//   { label: 'Testimonials', href: '/testimonials' },
+//   { label: 'About', href: '/about' },
+// ];
+
+// export default function Header() {
+//   const [isOpen, setIsOpen] = useState(false);
+//   const [isScrolled, setIsScrolled] = useState(false);
+//   const [currentPath, setCurrentPath] = useState('/');
+
+//   useEffect(() => {
+//     // Initial path
+//     setCurrentPath(window.location.pathname);
+
+//     const handleScroll = () => setIsScrolled(window.scrollY > 50);
+//     const handlePathChange = () => setCurrentPath(window.location.pathname);
+
+//     window.addEventListener('scroll', handleScroll);
+//     window.addEventListener('popstate', handlePathChange);
+
+//     return () => {
+//       window.removeEventListener('scroll', handleScroll);
+//       window.removeEventListener('popstate', handlePathChange);
+//     };
+//   }, []);
+
+//   // Only transparent + white text on Home page when NOT scrolled
+//   const isHomePage = currentPath === '/';
+//   const showTransparent = isHomePage && !isScrolled;
+
+//   return (
+//     <>
+//       <header
+//         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+//           showTransparent
+//             ? 'bg-transparent'
+//             : 'bg-white/95 backdrop-blur-xl shadow-lg border-b border-pink-100'
+//         }`}
+//       >
+        
+
+//         <div className="flex items-center justify-between h-28 px-6 lg:px-12">
+//           {/* Logos */}
+//           <div className="flex items-center gap-2">
+//             <img src={BUTTERFLY_LOGO} alt="Butterfly" className="h-20 md:h-32 w-auto drop-shadow-md" />
+//             <a href="/">
+//               <img
+//                 src={MAIN_LOGO}
+//                 alt="Shri Events"
+//                 className="h-36 md:h-48 lg:h-56 w-auto drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+//               />
+//             </a>
+//           </div>
+
+//           {/* Desktop Nav */}
+//           <div className="hidden md:flex items-center gap-10">
+//             <nav className="flex items-center gap-8">
+//               {navItems.map((item) => (
+//                 <a
+//                   key={item.href}
+//                   href={item.href}
+//                   className={`font-bold text-lg tracking-wider transition-all duration-300 ${
+//                     showTransparent
+//                       ? 'text-white hover:text-pink-200 drop-shadow-lg'
+//                       : 'text-gray-900 hover:text-pink-600'
+//                   }`}
+//                 >
+//                   {item.label}
+//                 </a>
+//               ))}
+//             </nav>
+
+//             <a
+//               href="/contact"
+//               className={`px-8 py-3 rounded-full font-bold text-lg transition-all duration-300 shadow-lg hover:scale-105 ${
+//                 showTransparent
+//                   ? 'bg-white/20 backdrop-blur text-white border border-white/30 hover:bg-white/30'
+//                   : 'bg-gradient-to-r from-pink-500 to-purple-600 text-white hover:shadow-xl'
+//               }`}
+//             >
+//               Book Now
+//             </a>
+//           </div>
+
+//           {/* Mobile Toggle */}
+//           <button
+//             onClick={() => setIsOpen(!isOpen)}
+//             className={`md:hidden p-3 rounded-full transition-all ${
+//               showTransparent
+//                 ? 'bg-white/20 backdrop-blur text-white'
+//                 : 'bg-white shadow-md text-gray-900'
+//             }`}
+//           >
+//             <AnimatePresence mode="wait">
+//               {isOpen ? <X size={36} /> : <Menu size={36} />}
+//             </AnimatePresence>
+//           </button>
+//         </div>
+//       </header>
+
+//       {/* Mobile Menu - Always visible text */}
+//       <AnimatePresence>
+//         {isOpen && (
+//           <motion.div
+//             initial={{ opacity: 0, y: -20 }}
+//             animate={{ opacity: 1, y: 0 }}
+//             exit={{ opacity: 0, y: -20 }}
+//             className="fixed inset-x-0 top-28 z-40 bg-white shadow-2xl md:hidden"
+//           >
+//             <nav className="flex flex-col items-center gap-8 pt-20 pb-12">
+//               {navItems.map((item) => (
+//                 <a
+//                   key={item.href}
+//                   href={item.href}
+//                   onClick={() => setIsOpen(false)}
+//                   className="text-2xl font-bold text-gray-900 hover:text-pink-600 transition-colors"
+//                 >
+//                   {item.label}
+//                 </a>
+//               ))}
+//               <a
+//                 href="/contact"
+//                 onClick={() => setIsOpen(false)}
+//                 className="px-12 py-5 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold text-xl rounded-full shadow-xl hover:scale-110 transition-all"
+//               >
+//                 Book Now
+//               </a>
+//             </nav>
+//           </motion.div>
+//         )}
+//       </AnimatePresence>
+//     </>
+//   );
+// }
+
 'use client';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 const BUTTERFLY_LOGO = "/images.png";
-const MAIN_LOGO = "";
 
 const navItems = [
   { label: 'Home', href: '/' },
@@ -1089,7 +1235,6 @@ export default function Header() {
   const [currentPath, setCurrentPath] = useState('/');
 
   useEffect(() => {
-    // Initial path
     setCurrentPath(window.location.pathname);
 
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -1104,7 +1249,6 @@ export default function Header() {
     };
   }, []);
 
-  // Only transparent + white text on Home page when NOT scrolled
   const isHomePage = currentPath === '/';
   const showTransparent = isHomePage && !isScrolled;
 
@@ -1117,20 +1261,25 @@ export default function Header() {
             : 'bg-white/95 backdrop-blur-xl shadow-lg border-b border-pink-100'
         }`}
       >
-        
+        <div className="flex items-center justify-between h-24 px-6 lg:px-12">
 
-        <div className="flex items-center justify-between h-28 px-6 lg:px-12">
-          {/* Logos */}
-          <div className="flex items-center gap-2">
-            <img src={BUTTERFLY_LOGO} alt="Butterfly" className="h-20 md:h-32 w-auto drop-shadow-md" />
-            <a href="/">
-              <img
-                src={MAIN_LOGO}
-                alt="Shri Events"
-                className="h-36 md:h-48 lg:h-56 w-auto drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+          {/* Butterfly Logo */}
+          <a href="/" className="flex items-center">
+            <motion.div
+              whileHover={{ scale: 1.05, rotate: 2 }}
+              transition={{ type: "spring", stiffness: 200 }}
+              className="relative h-16 w-16 md:h-20 md:w-20"
+            >
+              <Image
+                src={BUTTERFLY_LOGO}
+                alt="Butterfly Logo"
+                fill
+                priority
+                sizes="(max-width: 768px) 64px, 80px"
+                className="object-contain drop-shadow-lg"
               />
-            </a>
-          </div>
+            </motion.div>
+          </a>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-10">
@@ -1172,28 +1321,28 @@ export default function Header() {
             }`}
           >
             <AnimatePresence mode="wait">
-              {isOpen ? <X size={36} /> : <Menu size={36} />}
+              {isOpen ? <X size={32} /> : <Menu size={32} />}
             </AnimatePresence>
           </button>
         </div>
       </header>
 
-      {/* Mobile Menu - Always visible text */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-x-0 top-28 z-40 bg-white shadow-2xl md:hidden"
+            className="fixed inset-x-0 top-24 z-40 bg-white shadow-2xl md:hidden"
           >
-            <nav className="flex flex-col items-center gap-8 pt-20 pb-12">
+            <nav className="flex flex-col items-center gap-8 pt-16 pb-12">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-2xl font-bold text-gray-900 hover:text-pink-600 transition-colors"
+                  className="text-2xl font-bold text-gray-900 hover:text-pink-600"
                 >
                   {item.label}
                 </a>
@@ -1201,7 +1350,7 @@ export default function Header() {
               <a
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="px-12 py-5 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold text-xl rounded-full shadow-xl hover:scale-110 transition-all"
+                className="px-12 py-5 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold text-xl rounded-full shadow-xl hover:scale-110"
               >
                 Book Now
               </a>
