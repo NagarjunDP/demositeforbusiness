@@ -94,9 +94,9 @@ Sent from Shri Events Contact Form
   };
 
   const contactInfo = [
-    { icon: Phone, title: 'Phone', value: '+91 97392 20735', link: '' },
+    { icon: Phone, title: 'Phone', value: 'Phone Number', link: '' },
     { icon: Mail, title: 'Email', value: 'gmail@gmail.com', link: '' },
-    { icon: MapPin, title: 'Location', value: 'Bangalore, India', link: '#' },
+    { icon: MapPin, title: 'Location', value: 'Business Location', link: '#' },
   ];
 
   return (
